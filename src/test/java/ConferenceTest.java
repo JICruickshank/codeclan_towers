@@ -15,7 +15,7 @@ public class ConferenceTest {
     @Before
     public void setUp() throws Exception {
 
-        conference = new Conference(2, 100, "A");
+        conference = new Conference(2, 20, 100, "A");
         Guest guest = new Guest("James");
         Guest guest2 = new Guest("Katie");
         Guest guest3 = new Guest("Brendan");
@@ -54,12 +54,12 @@ public class ConferenceTest {
 
     @Test
     public void testRoomIsVacant() {
-        assertTrue(conference.isRoomVacant());
+        assertTrue(conference.roomVacant());
     }
 
     @Test
     public void testRoomIsNotVacant() {
         conference.addGuest(guest);
-        assertFalse(conference.isRoomVacant());
+        assertFalse(conference.roomVacant());
     }
 }

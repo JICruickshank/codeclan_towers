@@ -5,10 +5,12 @@ public abstract class Room {
     Room room;
     ArrayList<Guest> guests;
     int capacity;
+    int number;
 
-    public Room(int capacity) {
+    public Room(int capacity, int number) {
         this.capacity = capacity;
         guests = new ArrayList<>();
+        this.number = number;
 
     }
 
@@ -34,7 +36,11 @@ public abstract class Room {
         return guestCount() < capacity;
     }
 
-    public boolean isRoomVacant() {
+    public boolean roomVacant() {
         return guestCount() == 0;
+    }
+
+    public int getNumber() {
+        return number;
     }
 }
