@@ -17,10 +17,24 @@ public abstract class Room {
     }
 
     public void addGuest(Guest guest) {
-        this.guests.add(guest);
+        if (spaceAvailable()) {
+            guests.add(guest);
+        }
     }
 
     public int guestCount() {
         return this.guests.size();
+    }
+
+    public void removeGuest(Guest guest) {
+        this.guests.remove(guest);
+    }
+
+    public boolean spaceAvailable() {
+        return guestCount() < capacity;
+    }
+
+    public boolean isRoomVacant() {
+        return guestCount() == 0;
     }
 }
