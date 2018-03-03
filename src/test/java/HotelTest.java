@@ -45,13 +45,17 @@ public class HotelTest {
 
     @Test
     public void testCheckGuestOutRoom() {
+        assertEquals(1, bedroom1.guestCount());
+        hotel.checkOutBedroom(bedroom1, guest);
         assertEquals(0, bedroom2.guestCount());
-        hotel.checkInRoom(bedroom2, guest);
-        assertEquals(1, bedroom2.guestCount());
-        hotel.checkOutBedroom(bedroom2, guest);
-        assertEquals(0, bedroom2.guestCount());
-
     }
 
+    @Test
+    public void testListGuestsInRoom() {
+        Guest guest2 = new Guest("Lyn");
+        hotel.checkInRoom(bedroom1, guest2);
+        ArrayList<Guest> result = hotel.guestList(bedroom1);
+        assertEquals("Lyn", result.get(1).getName());
+    }
 }
 

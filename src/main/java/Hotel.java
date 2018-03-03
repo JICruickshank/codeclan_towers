@@ -34,5 +34,7 @@ public class Hotel {
         room.removeGuest(guest);
     }
 
-
+    public ArrayList<Guest> guestList(Bedroom bedroom) {
+        return bedroom.guests;
+    }
 }
