@@ -24,14 +24,14 @@ public class Hotel {
         return vacantRooms;
     }
 
-    public void checkInBedRoom(Bedroom bedroom, Guest guest) {
-        if (bedroom.spaceAvailable()) {
-            bedroom.addGuest(guest);
+    public void checkInRoom(Room room, Guest guest) {
+        if (room.spaceAvailable()) {
+            room.addGuest(guest);
         }
     }
 
-    public void checkOutBedroom(Bedroom bedroom, Guest guest) {
-        bedroom.removeGuest(guest);
+    public void checkOutBedroom(Room room, Guest guest) {
+        room.removeGuest(guest);
     }
 
 

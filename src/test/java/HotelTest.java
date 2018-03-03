@@ -27,31 +27,31 @@ public class HotelTest {
         bedrooms.add(bedroom2);
         bedroom1.addGuest(guest);
         hotel = new Hotel(bedrooms, conferenceRooms, diningRooms);
-        }
+    }
 
     @Test
-    public void testCanGetVacantRooms() {
+    public void testGetVacantRooms() {
         ArrayList<Bedroom> result = hotel.findVacantRooms();
         assertEquals(1, result.size());
         assertEquals(2, result.get(0).getNumber());
     }
 
     @Test
-    public void canCheckGuestInBedroom() {
+    public void testCheckGuestInRoom() {
         assertEquals(0, bedroom2.guestCount());
-        hotel.checkInBedRoom(bedroom2, guest);
+        hotel.checkInRoom(bedroom2, guest);
         assertEquals(1, bedroom2.guestCount());
     }
 
     @Test
-    public void canCheckGuestOutBedroom() {
+    public void testCheckGuestOutRoom() {
         assertEquals(0, bedroom2.guestCount());
-        hotel.checkInBedRoom(bedroom2, guest);
+        hotel.checkInRoom(bedroom2, guest);
         assertEquals(1, bedroom2.guestCount());
         hotel.checkOutBedroom(bedroom2, guest);
         assertEquals(0, bedroom2.guestCount());
 
     }
 
-
 }
+
