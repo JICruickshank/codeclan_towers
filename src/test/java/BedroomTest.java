@@ -14,9 +14,9 @@ public class BedroomTest {
     @Before
     public void setUp() throws Exception {
 
-        bedroom = new Bedroom(2, 12, "Double", 80);
-        guest1 = new Guest("J");
-        guest2 = new Guest("Danny");
+        bedroom = new Bedroom(2, 12, RoomType.TWIN, 80);
+        guest1 = new Guest("Sean");
+        guest2 = new Guest("Alistair");
         bedroom.guests = new ArrayList<>();
 
     }

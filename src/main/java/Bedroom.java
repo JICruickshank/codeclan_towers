@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Bedroom extends Room {
 
     private int number;
-    private String type;
+    private RoomType type;
     private int cost;
 
-    public Bedroom(int capacity, int number, String type, int cost) {
+    public Bedroom(int capacity, int number, RoomType type, int cost) {
         super(capacity);
         this.number = number;
         this.type = type;
