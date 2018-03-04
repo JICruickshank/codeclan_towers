@@ -7,9 +7,18 @@ public class Bedroom extends Room {
     private int cost;
 
     public Bedroom(int capacity, int number, RoomType type, int cost) {
-        super(capacity, number);
+        super(capacity);
+        this.number = number;
         this.type = type;
         this.cost = cost;
+    }
+
+    public RoomType getRoomType() {
+        return type;
+    }
+
+    public int getNumber() {
+        return number;
     }
 
 

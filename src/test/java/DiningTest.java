@@ -10,7 +10,7 @@ public class DiningTest {
     @Before
     public void setUp() throws Exception {
 
-    dining = new Dining (30, 10);
+    dining = new Dining (30);
 
     }
 

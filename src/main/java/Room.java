@@ -5,13 +5,10 @@ public abstract class Room {
     Room room;
     ArrayList<Guest> guests;
     int capacity;
-    int number;
 
-    public Room(int capacity, int number) {
+    public Room(int capacity) {
         this.capacity = capacity;
         guests = new ArrayList<>();
-        this.number = number;
-
     }
 
     public int getCapacity() {
@@ -28,8 +25,13 @@ public abstract class Room {
         return this.guests.size();
     }
 
-    public void removeGuest(Guest guest) {
-        this.guests.remove(guest);
+    public void removeGuest(Guest guestToRemove) {
+        for (Guest guest : guests) {
+            if (guest.getName() == guestToRemove.getName()) {
+                guestToRemove = guest;
+            }
+        }
+        guests.remove(guestToRemove);
     }
 
     public boolean spaceAvailable() {
@@ -40,7 +42,13 @@ public abstract class Room {
         return guestCount() == 0;
     }
 
-    public int getNumber() {
-        return number;
+    public Guest findGuest(String name) {
+        Guest found = null;
+        for (Guest guest : guests) {
+            if (guest.getName() == name) {
+                found = guest;
+            }
+        }
+        return found;
     }
 }
